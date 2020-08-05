@@ -26,7 +26,12 @@ function MenuItem({
 }) {
   const touchableProps =
     Platform.OS === 'android'
-      ? { background: TouchableNativeFeedback.SelectableBackground() }
+      ? {
+          background:
+            Platform.Version >= 21
+              ? TouchableNativeFeedback.Ripple('rgba(0,0,0,.2)', false)
+              : TouchableNativeFeedback.SelectableBackground(),
+        }
       : {};
 
   return (
