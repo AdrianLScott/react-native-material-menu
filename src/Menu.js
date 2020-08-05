@@ -224,11 +224,11 @@ class Menu extends React.Component {
                   style,
                 ]}
               >
-                <Animated.View
+                <Animated.ScrollView
                   style={[styles.menuContainer, animationStarted && menuSize]}
                 >
                   {children}
-                </Animated.View>
+                </Animated.ScrollView>
               </Animated.View>
             </View>
           </TouchableWithoutFeedback>
@@ -264,6 +264,7 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     overflow: 'hidden',
+    maxHeight: 300,
   },
 });
 
